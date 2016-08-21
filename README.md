@@ -1,19 +1,6 @@
-# [Phenomic](https://github.com/MoOx/phenomic) boilerplate
+# My personnal blog
 
-## Install dependencies
+## Technical specifications
 
-```console
-$ npm install
-```
-
-## Run development server
-
-```console
-$ npm start
-```
-
-## Build for production
-
-```console
-$ npm run build
-```
+`giboow.fr` uses [Phenomenic](https://phenomic.io/), an awesome website generator,
+based on React and Webpack ecosystem.
