@@ -4,6 +4,9 @@
   "homepage": "http://giboow.fr",
   "twitter": "GiBoOw",
   "repository": "https://github.com/giboow/giboow.github.io",
+  "config" : {
+    "siteName" : "GiBoOw"
+  },
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"web_modules/**/*.css\"",
