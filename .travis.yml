@@ -1,7 +1,9 @@
 language: node_js
+
 node_js:
   - '5'
   - '4'
+
 deploy:
   skip_cleanup: true
   provider: script
@@ -9,6 +11,16 @@ deploy:
   'on':
     branch: master
     node: '5'
+
+before_install:
+  # ensure npm @ 3 is installed (check only first number of npm)
+  - NPM_VERSION=$(npm --version)
+  - 'if [ "${NPM_VERSION:0:2}" = "2." ]; then npm i -g npm@latest; fi'
+  # faster npm install
+  - npm set progress=false
+  # remove useless/non listed deps
+  - npm prune
+
 env:
   global:
     - secure: >-
