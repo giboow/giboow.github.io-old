@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from "react"
 
 import Page from "../Page"
+import Comment from "../../Comment"
 
 class Post extends Component {
 
@@ -13,6 +14,7 @@ class Post extends Component {
     const pageDate = head.date ? new Date(head.date) : null
 
     return (
+
       <Page
         { ...props }
         header={
@@ -25,7 +27,10 @@ class Post extends Component {
           }
           </header>
         }
-      />
+        footer={ <div>{ "hello" }</div> }
+      >
+        <Comment {...props} />
+      </Page>
     )
   }
 }
