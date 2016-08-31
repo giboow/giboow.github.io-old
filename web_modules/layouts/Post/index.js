@@ -32,7 +32,6 @@ class Post extends Component {
           }
             <div className={ styles.CommentCounter }>
               <CommentCounter
-                {...props}
                 shortname="http-giboow-fr"
                 url="http://giboow.fr/posts/my-first-post/"
               />
