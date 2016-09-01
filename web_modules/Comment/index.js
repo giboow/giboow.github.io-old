@@ -10,8 +10,13 @@ export default class Comment extends Component {
 
   static propTypes = {
     head: PropTypes.object.isRequired,
-    __url: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    onNewComment : PropTypes.function,
   }
+
+  static defaultProps = {
+    onNewComment : null,
+  };
 
   render() {
     const { props, context } = this
@@ -25,8 +30,8 @@ export default class Comment extends Component {
         shortname={ pkg.config.disqus.shortname }
         identifier={ props.head.date }
         title={ props.head.title }
-        url={ pkg.homepage + props.__url }
-        category_id="123456"
+        onNewComment={ props.onNewComment }
+        url={ props.url }
       />
     )
   }

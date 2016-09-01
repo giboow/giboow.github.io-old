@@ -6,18 +6,35 @@ import CommentCounter from "../../Comment/Counter"
 import styles from "./index.css"
 
 class Post extends Component {
+  static contextTypes = {
+    metadata: PropTypes.object.isRequired,
+  };
 
   static propTypes = {
     head: PropTypes.object.isRequired,
   }
-  // it's up to you to choose what to do with this layout ;)
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      updateCommentCounter : false,
+    }
+  }
+
+  handleNewComment() {
+  }
 
   render() {
-    const { props } = this
+    const { props, context } = this
     const { head } = props
 
     const pageDate = head.date ? new Date(head.date) : null
 
+    const {
+      pkg,
+    } = context.metadata
+
+    let url= pkg.homepage + props.__url
     return (
 
       <Page
@@ -32,14 +49,16 @@ class Post extends Component {
           }
             <div className={ styles.CommentCounter }>
               <CommentCounter
-                shortname="http-giboow-fr"
-                url="http://giboow.fr/posts/my-first-post/"
+                url={ url }
               />
             </div>
           </header>
         }
       >
-        <Comment {...props} />
+        <Comment {...props}
+          onNewComment={ this.handleNewComment }
+          url={ url }
+        />
       </Page>
     )
   }
