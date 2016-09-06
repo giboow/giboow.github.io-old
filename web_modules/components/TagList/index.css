@@ -1,0 +1,17 @@
+.container {
+  widht: 100%;
+}
+
+.tagList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  border: solid 1px grey;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 1px 5px;
+  border-radius: 5px;
+}
