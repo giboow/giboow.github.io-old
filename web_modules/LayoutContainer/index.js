@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 
 import Header from "../Header"
 import Footer from "../Footer"
+import GoogleAnalytics from "../GoogleAnalytics"
 
 import "./index.global.css"
 import styles from "./index.css"
@@ -51,6 +52,7 @@ export default class Layout extends Component {
           { this.props.children }
         </div>
         <Footer />
+        <GoogleAnalytics />
       </div>
     )
   }

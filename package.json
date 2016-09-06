@@ -6,6 +6,7 @@
   "repository": "https://github.com/giboow/giboow.github.io",
   "config": {
     "siteName": "GiBoOw",
+    "GoogleAnalyticsId": "UA-75828878-1",
     "disqus": {
       "shortname": "http-giboow-fr"
     }
@@ -93,7 +94,9 @@
     "whatwg-fetch": "^0.11.0"
   },
   "dependencies": {
+    "eslint-config-loopback": "^4.0.0",
     "react-disqus-counter": "~0.0.12",
-    "react-disqus-thread": "^0.4.0"
+    "react-disqus-thread": "^0.4.0",
+    "react-g-analytics": "^0.2.6"
   }
 }
