@@ -17,9 +17,8 @@ export default class GoogleAnalytics extends Component {
     } = this.context.metadata
 
     return (
-      ((isProduction && isBrowser) ?
+      isProduction && isBrowser &&
         <ReactGoogleAnalytics id={ pkg.config.GoogleAnalyticsId } />
-        : null)
     )
   }
 }
