@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from "react"
 
 import Page from "../Page"
-import Comment from "../../Comment"
-import CommentCounter from "../../Comment/Counter"
+import Comment from "../../components/Comment"
+import CommentCounter from "../../components/Comment/Counter"
 import styles from "./index.css"
 
 class Post extends Component {
