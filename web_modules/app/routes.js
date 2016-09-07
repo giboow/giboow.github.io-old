@@ -32,7 +32,7 @@ class PageContainer extends Component {
 
 export default (
   <Route component={ LayoutContainer }>
-    <Route path="/tag/:tag" component={ PostsByTag } />
+    <Route path="tag/:tag" component={ PostsByTag } />
     <Route path="*" component={ PageContainer } />
   </Route>
 )
