@@ -1,4 +1,5 @@
 import React, { PropTypes } from "react"
+import { Link } from "react-router"
 import styles from "./index.css"
 
 const TagList = ({ tags }) => {
@@ -11,7 +12,9 @@ const TagList = ({ tags }) => {
           <ul className={ styles.tagList }>
           {
             tags.map((tag) => (
-              <li className={ styles.tag } key={ tag }>{ tag }</li>
+              <li className={ styles.tag } key={ tag }>
+                <Link to={ "/tag/"+tag }>{ tag }</Link>
+              </li>
             ))
           }
           </ul>

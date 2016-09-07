@@ -10,6 +10,8 @@ import PageLoading from "../layouts/PageLoading"
 import Homepage from "../layouts/Homepage"
 import Post from "../layouts/Post"
 
+import PostsByTag from "../components/PostsByTag"
+
 class PageContainer extends Component {
   render() {
     const { props } = this
@@ -30,6 +32,7 @@ class PageContainer extends Component {
 
 export default (
   <Route component={ LayoutContainer }>
+    <Route path="/tag/:tag" component={ PostsByTag } />
     <Route path="*" component={ PageContainer } />
   </Route>
 )
