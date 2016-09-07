@@ -16,5 +16,7 @@ before_install:
   - npm prune
 env:
   global:
+    #GH_TOKEN
     - secure: >-
         m9PIR3vlzG8kerbaXPNyqxSj3teAb7hcfUm+8BFS75Y1UCM4OnWS9s1HlOFQDcOygxSPVV8Au7iMpbCMrTZPF3p78PWieoNQem2AW3uh1sKZ2hFdXPPQYhyMnsFv1dVFhi7nCJmyt9ot0icRBhAGMaFOYOX5pgHVZgChOtn/7ozcVBO7FZpVAhJYfyl9L1goRYotgyVU94hkYp5nMqlCZrGCOgXR4+BRSSLHT//UpDl2hlwIJl1Zbj2SbmEsOgg4yBeyawxAXeL1tSgioG8ZPkm5XJCKcVm6c4/gYFgYoSXlBMli7XkZZ6Sa2T8+t8kbRqpcVGy/ls0rgbiHdcZ3twNIN0KzlulZSfO0XcLSWk/8Uh+yCoJMXwz46Lj+9vvFJyQXgDRHs8Agfs9gUukHgmyjypcLumGze0Hm2VdzdTMyjDQaRGvtnvEdGjICT0abacFPrOqQaz5ATnGX5N5t9jZMj5+FBDF9ZCXkpeUVOYaNcm7/lIlOhRmUx3CAdEH7cK6icyJrdt7NdX6IP13Rx8LyqFBVm6NshnaPlaC0r2JvcZ7wMektTgM1Ntd38DZLwLnYo9eqavRZtJp7wcV9WNPatEaSBU0Jbv0jnky80yb+PyQzw4BTA4cIWGVqZuOUBfYOOK0lyb/vc5wPJ2bKY8IrkTSiXz5CjZ1CfSqgnos=
+    - GIT_DEPLOY_REPO=https://$GH_TOKEN@github.com/giboow/giboow.github.io.git
