@@ -29,7 +29,8 @@ export default class Header extends Component {
             </Link>
           </div>
           <div className={ styles.navPart2 }>
-            <Link to="/about">{ "A propos" }</Link>
+            <Link to="/posts" className={ styles.link }>{ "Articles" }</Link>
+            <Link to="/about" className={ styles.link }>{ "A propos" }</Link>
             { pkg.twitter &&
               <a
                 href={ `https://twitter.com/${pkg.twitter}` }
