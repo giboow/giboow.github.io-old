@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from "react"
 import enhanceCollection from "phenomic/lib/enhance-collection"
-import Posts from "../PagesList"
+import Posts from "../../components/Posts"
 
 export default class PostsByTag extends Component {
 
@@ -23,8 +23,9 @@ export default class PostsByTag extends Component {
       sort: "date",
       reverse: true,
     })
+
     return (
-      <Posts pages={ posts } />
+      <Posts collection={ posts } {...props} />
     )
   }
 }

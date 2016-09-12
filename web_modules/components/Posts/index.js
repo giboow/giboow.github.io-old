@@ -10,8 +10,9 @@ export default class Post extends Component {
 
   static propTypes = {
     params : PropTypes.shape({
-      page : PropTypes.integer,
+      page : PropTypes.numeric,
     }),
+    collection : PropTypes.array,
   }
 
   static contextTypes ={
@@ -19,22 +20,31 @@ export default class Post extends Component {
   }
 
   render() {
+    const { props } = this
 
-    const { collection } = this.context
+    let postCollection = []
+
+    if (props.collection !== undefined) {
+      postCollection = this.props.collection
+    }
+    else {
+      const { collection } = this.context
+      postCollection = enhanceCollection(collection, {
+        filter: { layout: "Post" },
+        sort: "date",
+        reverse: true,
+      })
+    }
+
     const { page = 1  } = this.props.params
-    const postCollection = enhanceCollection(collection, {
-      filter: { layout: "Post" },
-      sort: "date",
-      reverse: true,
-    })
+
     const offset = (page-1)*numberOfPosts
     const latestPosts = postCollection.slice(offset, offset+numberOfPosts)
-
     return (
       <div>
         <PagesList pages={ latestPosts } />
         <Navigation
-          page={ page }
+          page={ parseInt(page) }
           collection={ postCollection }
           numberOfPosts={ numberOfPosts }
           uri={ "/articles" }
