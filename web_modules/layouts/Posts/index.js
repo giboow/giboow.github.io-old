@@ -12,9 +12,7 @@ const numberOfPosts = 1
 export default class Post extends Component {
 
   static propTypes = {
-    params : PropTypes.shape({
-      page : PropTypes.integer,
-    }),
+    params : PropTypes.object,
   }
 
   static contextTypes ={
@@ -31,7 +29,8 @@ export default class Post extends Component {
       reverse: true,
     })
 
-    const latestPosts = postCollection.slice(0, numberOfPosts)
+    const offset = (page-1)*numberOfPosts
+    const latestPosts = postCollection.slice(offset, offset+numberOfPosts)
     const numPages = Math.ceil(postCollection.length / numberOfPosts)
 
     return (
@@ -54,7 +53,7 @@ export default class Post extends Component {
                         key={ pageIndex }
                       >
                       { !isCurrent ? (
-                            <Link to={ "/posts/"+pageIndex }>
+                            <Link to={ "/articles/" +pageIndex }>
                               { pageIndex }
                             </Link>
                          ) : (pageIndex)
