@@ -1,18 +1,17 @@
 import React, { Component, PropTypes } from "react"
 import PagesList from "../../components/PagesList"
+import Navigation from "../../components/Pagination"
+
 import enhanceCollection from "phenomic/lib/enhance-collection"
-import styles from "./index.css"
-import classNames from "classnames/bind"
-import { Link } from "react-router"
 
-const cx = classNames.bind(styles)
-
-const numberOfPosts = 1
+const numberOfPosts = 10
 
 export default class Post extends Component {
 
   static propTypes = {
-    params : PropTypes.object,
+    params : PropTypes.shape({
+      page : PropTypes.integer,
+    }),
   }
 
   static contextTypes ={
@@ -28,45 +27,18 @@ export default class Post extends Component {
       sort: "date",
       reverse: true,
     })
-
     const offset = (page-1)*numberOfPosts
     const latestPosts = postCollection.slice(offset, offset+numberOfPosts)
-    const numPages = Math.ceil(postCollection.length / numberOfPosts)
 
     return (
       <div>
         <PagesList pages={ latestPosts } />
-        {
-          numPages > 1
-          ? (
-            <ul className={ styles.navigation }>
-              {
-                [ ...Array(numPages) ].map((x, i) => {
-
-                  const pageIndex = i + 1
-                  const isCurrent = Boolean(pageIndex == page)
-                  return (
-                      <li className={ cx({
-                        "navigation-item" : true,
-                        "navigation-item--curent" : isCurrent,
-                      }) }
-                        key={ pageIndex }
-                      >
-                      { !isCurrent ? (
-                            <Link to={ "/articles/" +pageIndex }>
-                              { pageIndex }
-                            </Link>
-                         ) : (pageIndex)
-                      }
-
-                    </li>
-                    )
-                }
-                )
-              }
-            </ul>
-          ) : null
-        }
+        <Navigation
+          page={ page }
+          collection={ postCollection }
+          numberOfPosts={ numberOfPosts }
+          uri={ "/articles" }
+        />
       </div>
     )
   }
