@@ -4,7 +4,7 @@ import DisqusCounter from "react-disqus-counter"
 export default class Counter extends Component {
 
   static contextTypes = {
-    metadata: PropTypes.object.isRequired,
+    metadata: PropTypes.object.isRequired
   };
 
   static propTypes = {
@@ -12,7 +12,7 @@ export default class Counter extends Component {
     url : PropTypes.string.isRequired,
     content : PropTypes.string,
     doUpdate : PropTypes.boolean,
-    children : PropTypes.element,
+    children : PropTypes.element
   }
 
   render() {

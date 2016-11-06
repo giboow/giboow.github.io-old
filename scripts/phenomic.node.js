@@ -9,5 +9,5 @@ module.exports = (options) =>
     ...options,
     metadata,
     routes,
-    store,
+    store
   })

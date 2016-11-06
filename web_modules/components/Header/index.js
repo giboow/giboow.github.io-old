@@ -9,12 +9,12 @@ import gitHubSvg from "../../icons/iconmonstr-github-1.svg"
 export default class Header extends Component {
 
   static contextTypes = {
-    metadata: PropTypes.object.isRequired,
+    metadata: PropTypes.object.isRequired
   };
 
   render() {
     const {
-      pkg,
+      pkg
     } = this.context.metadata
 
     return (

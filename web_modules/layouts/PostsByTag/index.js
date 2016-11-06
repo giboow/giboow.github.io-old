@@ -5,11 +5,11 @@ import Posts from "../../components/Posts"
 export default class PostsByTag extends Component {
 
   static propTypes = {
-    params : PropTypes.object.isRequired,
+    params : PropTypes.object.isRequired
   }
 
   static contextTypes = {
-    collection : PropTypes.array.isRequired,
+    collection : PropTypes.array.isRequired
   }
 
   render() {
@@ -21,7 +21,7 @@ export default class PostsByTag extends Component {
         post.tags && post.tags.indexOf(tag) >= 0
       ),
       sort: "date",
-      reverse: true,
+      reverse: true
     })
 
     return (

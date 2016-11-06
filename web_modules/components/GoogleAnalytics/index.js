@@ -7,13 +7,13 @@ const isProduction = process.env.NODE_ENV === "production"
 export default class GoogleAnalytics extends Component {
 
   static contextTypes = {
-    metadata: PropTypes.object.isRequired,
+    metadata: PropTypes.object.isRequired
   }
 
   render() {
 
     const {
-      pkg,
+      pkg
     } = this.context.metadata
 
     return (

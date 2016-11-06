@@ -7,17 +7,17 @@ import styles from "./index.css"
 
 class Post extends Component {
   static contextTypes = {
-    metadata: PropTypes.object.isRequired,
+    metadata: PropTypes.object.isRequired
   };
 
   static propTypes = {
-    head: PropTypes.object.isRequired,
+    head: PropTypes.object.isRequired
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      updateCommentCounter : false,
+      updateCommentCounter : false
     }
   }
 
@@ -31,7 +31,7 @@ class Post extends Component {
     const pageDate = head.date ? new Date(head.date) : null
 
     const {
-      pkg,
+      pkg
     } = context.metadata
 
     let url= pkg.homepage + props.__url

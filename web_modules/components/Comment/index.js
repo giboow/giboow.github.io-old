@@ -5,24 +5,24 @@ import ReactDisqusThread from "react-disqus-thread"
 export default class Comment extends Component {
 
   static contextTypes = {
-    metadata: PropTypes.object.isRequired,
+    metadata: PropTypes.object.isRequired
   }
 
   static propTypes = {
     head: PropTypes.object.isRequired,
     url: PropTypes.string.isRequired,
-    onNewComment : PropTypes.function,
+    onNewComment : PropTypes.function
   }
 
   static defaultProps = {
-    onNewComment : null,
+    onNewComment : null
   };
 
   render() {
     const { props, context } = this
 
     const {
-      pkg,
+      pkg
     } = context.metadata
 
     return (

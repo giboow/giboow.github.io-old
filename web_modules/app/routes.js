@@ -24,7 +24,7 @@ class PageContainer extends Component {
           PageError,
           PageLoading,
           Homepage,
-          Post,
+          Post
         } }
       />
     )

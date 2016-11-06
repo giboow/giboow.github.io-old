@@ -29,7 +29,7 @@ PagePreview.propTypes = {
   __url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
-  tags: PropTypes.array,
+  tags: PropTypes.array
 }
 
 export default PagePreview

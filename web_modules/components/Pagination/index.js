@@ -12,7 +12,7 @@ export default class Pagination extends Component {
     numberOfPosts : PropTypes.number.isRequired,
     page : PropTypes.number.isRequired,
     collection : PropTypes.array.isRequired,
-    uri : PropTypes.string.isRequired,
+    uri : PropTypes.string.isRequired
   }
 
   render() {
@@ -35,7 +35,7 @@ export default class Pagination extends Component {
               return (
                   <li className={ cx({
                     "navigation-item" : true,
-                    "navigation-item--curent" : isCurrent,
+                    "navigation-item--curent" : isCurrent
                   }) }
                     key={ pageIndex }
                   >

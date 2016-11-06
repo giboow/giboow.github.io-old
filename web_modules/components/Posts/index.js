@@ -10,13 +10,13 @@ export default class Post extends Component {
 
   static propTypes = {
     params : PropTypes.shape({
-      page : PropTypes.numeric,
+      page : PropTypes.numeric
     }),
-    collection : PropTypes.array,
+    collection : PropTypes.array
   }
 
   static contextTypes ={
-    collection : PropTypes.array,
+    collection : PropTypes.array
   }
 
   render() {
@@ -32,7 +32,7 @@ export default class Post extends Component {
       postCollection = enhanceCollection(collection, {
         filter: { layout: "Post" },
         sort: "date",
-        reverse: true,
+        reverse: true
       })
     }
 
