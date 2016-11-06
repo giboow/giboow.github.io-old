@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Route } from "react-router"
 
 import LayoutContainer from "../components/LayoutContainer"
-import PhenomicPageContainer from "phenomic/lib/PageContainer"
+import {PageContainer} from "phenomic"
 
 import Page from "../layouts/Page"
 import PageError from "../layouts/PageError"
@@ -13,11 +13,11 @@ import Posts from "../components/Posts"
 
 import PostsByTag from "../layouts/PostsByTag"
 
-class PageContainer extends Component {
+class AppPageContainer extends Component {
   render() {
     const { props } = this
     return (
-      <PhenomicPageContainer
+      <PageContainer
         { ...props }
         layouts={ {
           Page,
@@ -35,6 +35,6 @@ export default (
   <Route component={ LayoutContainer }>
     <Route name="tag" path="tag/:tag(/:page)" component={ PostsByTag } />
     <Route name="archives" path="/articles(/:page)" component={ Posts } />
-    <Route path="*" component={ PageContainer } />
+    <Route path="*" component={ AppPageContainer } />
   </Route>
 )
