@@ -143,8 +143,8 @@ export const makeConfig = (config = {}) => {
             /* enable nested css selectors like Sass/Less */
             require('postcss-nested'),
             ...config.production ? [
-                require('postcss-browser-reporter')(), // dev
-            ] : [], // prod
+                require('postcss-browser-reporter')() // dev
+            ] : [] // prod
         ],
 
         plugins: [
