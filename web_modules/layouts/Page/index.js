@@ -1,11 +1,11 @@
-import React, { Component, PropTypes } from "react"
+import React, {Component, PropTypes} from "react"
 import Helmet from "react-helmet"
 import invariant from "invariant"
-import { BodyContainer, joinUri } from "phenomic"
+import {BodyContainer, joinUri} from "phenomic"
 
 class Page extends Component {
   render() {
-    const { props, context } = this
+    const {props, context} = this
 
     const {
       pkg
@@ -17,7 +17,9 @@ class Page extends Component {
       head,
       body,
       header,
-      footer
+      footer,
+      extraHeader,
+      displayTitle = true
     } = props
 
     invariant(
@@ -28,18 +30,18 @@ class Page extends Component {
     const metaTitle = head.metaTitle ? head.metaTitle : head.title
 
     const meta = [
-      { property: "og:type", content: "article" },
-      { property: "og:title", content: metaTitle },
+      {property: "og:type", content: "article"},
+      {property: "og:title", content: metaTitle},
       {
         property: "og:url",
         content: joinUri(process.env.PHENOMIC_USER_URL, __url)
       },
-      { property: "og:description", content: head.description },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: metaTitle },
-      { name: "twitter:creator", content: `@${ pkg.twitter }` },
-      { name: "twitter:description", content: head.description },
-      { name: "description", content: head.description }
+      {property: "og:description", content: head.description},
+      {name: "twitter:card", content: "summary"},
+      {name: "twitter:title", content: metaTitle},
+      {name: "twitter:creator", content: `@${ pkg.twitter }`},
+      {name: "twitter:description", content: head.description},
+      {name: "description", content: head.description}
     ]
 
     return (
@@ -49,21 +51,24 @@ class Page extends Component {
           meta={ meta }
         />
 
-        {
-          head.title &&
-          <h1>{ head.title }</h1>
-        }
-        { header }
-        <BodyContainer>{ body }</BodyContainer>
-        { props.children }
-        { footer }
+        { extraHeader }
+        <div className="container">
+          {
+            displayTitle && head.title &&
+            <h1>{ head.title }</h1>
+          }
+          { header }
+          <BodyContainer>{ body }</BodyContainer>
+          { props.children }
+          { footer }
+        </div>
       </div>
     )
   }
 }
 
 Page.propTypes = {
-  children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   __filename: PropTypes.string.isRequired,
   __url: PropTypes.string.isRequired,
   head: PropTypes.object.isRequired,

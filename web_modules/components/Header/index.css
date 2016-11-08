@@ -13,8 +13,7 @@
   justify-content: space-between;
 
   max-width: calc(60rem + (var(--nav-item-padding) * 2));
-  margin: 0 auto 1rem;
-  padding: 0 1rem;
+  margin: 0 auto;
   line-height: 3rem;
 }
 

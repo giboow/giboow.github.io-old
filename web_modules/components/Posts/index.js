@@ -41,7 +41,7 @@ export default class Post extends Component {
     const offset = (page-1)*numberOfPosts
     const latestPosts = postCollection.slice(offset, offset+numberOfPosts)
     return (
-      <div>
+      <div className="container">
         <PagesList pages={ latestPosts } />
         <Navigation
           page={ parseInt(page) }
