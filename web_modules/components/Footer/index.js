@@ -1,13 +1,25 @@
-import React, { Component } from "react"
-import { Link } from "react-router"
-
+import React, {Component, PropTypes} from "react"
 import styles from "./index.css"
 
 export default class Footer extends Component {
 
+  static contextTypes = {
+    metadata: PropTypes.object.isRequired
+  }
+
   render() {
+
+    const {pkg} = this.context.metadata
+
+    console.log(pkg)
     return (
       <footer className={ styles.footer }>
+        {'Made with ❤️ by '}
+        <a href={'http://twitter.com/' + pkg.twitter}
+           className={styles.link}>
+          {'@' + pkg.twitter}
+        </a>
+        {" | "}
         <a
           href={ process.env.PHENOMIC_HOMEPAGE }
           className={ styles.link }
@@ -17,22 +29,6 @@ export default class Footer extends Component {
             {  `<${ process.env.PHENOMIC_NAME} />` }
           </span>
         </a>
-
-        { " | " }
-        { "Pages: " }
-        <Link
-          className={ styles.link }
-          to="/404.html"
-        >
-          { "404" }
-        </Link>
-        { ", " }
-        <Link
-          className={ styles.link }
-          to="/loading/"
-        >
-          { "Loading" }
-        </Link>
       </footer>
     )
   }

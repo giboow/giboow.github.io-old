@@ -31,8 +31,8 @@ export default class Homepage extends Component {
       <div className={cx('homepage__about')}>
         <div className={cx('homepage__about__layer')}>
           <h1>Bienvenue sur mon blog!</h1>
-          <h6 className={cx('homepage__about__twitter')}>
-            <a href={'http://twitter.com/' + pkg.twitter}>
+          <h6>
+            <a className={styles.link} href={'http://twitter.com/' + pkg.twitter}>
               @GiBoOw
             </a>
           </h6>
