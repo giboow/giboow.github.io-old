@@ -1,5 +1,4 @@
 .footer {
-  margin-top: 1rem;
   padding: 1rem;
   font-size: 0.75rem;
   text-align: center;
@@ -8,8 +7,7 @@
 }
 
 .link {
-  opacity: 0.4;
-  color: inherit;
+  color: #bdc3c7;
   text-decoration: none;
 }
 
