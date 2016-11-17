@@ -8,6 +8,7 @@
   padding: 1rem 0.75rem; */
   min-height: 1000px;
   background-color: white;
+
   @media (max-height: 800px) {
     min-height: 550px;
   }
